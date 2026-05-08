@@ -1,0 +1,20 @@
+# @package model
+
+_target_: src.models.neural_ode.NeuralODE
+
+# ODE Function parameters
+ode_func:
+  _target_: src.models.ode_functions.BasicODEFunc
+  hidden_dim: 50
+  activation: "relu"
+  dropout: 0.0
+
+# Neural ODE parameters
+rtol: 1e-3
+atol: 1e-4
+method: "dopri5"  # dopri5, rk4, euler, adaptive_heun
+adjoint: true
+
+# Model architecture
+input_dim: 1
+output_dim: 1

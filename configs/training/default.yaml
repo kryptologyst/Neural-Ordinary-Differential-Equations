@@ -1,0 +1,25 @@
+# @package training
+
+_target_: src.train.trainer.Trainer
+
+# Training parameters
+epochs: 500
+learning_rate: 0.01
+weight_decay: 1e-4
+optimizer: "adam"  # adam, sgd, rmsprop
+scheduler: null  # cosine, step, exponential
+
+# Loss function
+loss_fn:
+  _target_: torch.nn.MSELoss
+
+# Validation
+val_frequency: 10
+early_stopping:
+  patience: 50
+  min_delta: 1e-6
+
+# Checkpointing
+save_frequency: 50
+save_best: true
+save_last: true

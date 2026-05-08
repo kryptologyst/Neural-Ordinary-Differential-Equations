@@ -1,0 +1,24 @@
+# @package evaluation
+
+_target_: src.eval.evaluator.Evaluator
+
+# Metrics to compute
+metrics:
+  - mse
+  - mae
+  - rmse
+  - mape
+  - r2_score
+  - ode_solver_steps
+  - ode_solver_time
+
+# Evaluation settings
+compute_uncertainty: false
+compute_gradients: true
+compute_hessian: false
+
+# Visualization
+plot_predictions: true
+plot_residuals: true
+plot_phase_space: false
+save_plots: true
